@@ -1,0 +1,39 @@
+/*accesses every element to include padding
+in the total width and height*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: cornflowerblue;
+    margin:0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piano{
+    /*all elements are next to each other 
+    instead of stacked on top of each other*/
+    display:flex;
+}
+
+.key {
+    height: calc(var(--width)*4);
+    width: var(--width);
+}
+
+.white{
+    --width: 100px;
+    background-color: white;
+    border:1px solid black;
+}
+
+.black{
+    --width: 60px;
+    background-color: black;
+    margin-left: calc(var(--width)/-2);
+    margin-right: calc(var(--width)/-2);
+    z-index:2;
+}
